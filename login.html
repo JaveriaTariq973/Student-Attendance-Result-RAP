@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal</title>
+  <link rel="stylesheet" href="styles/auth.css">
+</head>
+<body>
+  <main class="auth-container">
+    <div class="auth-card">
+      <h2>Login / Signup</h2>
+
+      <!-- Role selection -->
+      <label for="role">Select Role:</label>
+      <select id="role">
+        <option value="admin">Admin</option>
+        <option value="teacher">Teacher</option>
+        <option value="student">Student</option>
+      </select>
+
+      <!-- Login Form -->
+      <div id="login-form">
+        <input type="text" id="login-name" placeholder="Username">
+        <input type="password" id="login-pass" placeholder="Password">
+        <button id="login-btn">Login</button>
+      </div>
+
+      <!-- Signup Form -->
+      <div id="signup-form">
+        <br>
+        <input type="text" id="signup-name" placeholder="Username">
+        <input type="password" id="signup-pass" placeholder="Password">
+        <div id="section-container" style="display:none;">
+  <label for="signup-section">Select Section (for Students):</label>
+  <select id="signup-section">
+    <option value="">--Select Section--</option>
+    <option value="A">Section A</option>
+    <option value="B">Section B</option>
+  </select>
+</div>
+        <button id="signup-btn">Sign Up</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/storage.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
