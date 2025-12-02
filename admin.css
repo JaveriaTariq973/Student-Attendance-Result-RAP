@@ -1,0 +1,690 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #000;
+}
+
+/* Header */
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #0052cc;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  flex-wrap: wrap;
+}
+
+.admin-header .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.admin-nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex: 1;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.admin-nav .nav-btn {
+  background-color: #e6f0ff;
+  color: #0052cc;
+  padding: 10px 18px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.admin-nav .nav-btn:hover {
+  background-color: #cce0ff;
+  transform: translateY(-2px);
+}
+
+#logout-btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+#logout-btn:hover {
+  background-color: #cc0000;
+}
+
+/* Admin Content */
+.admin-content {
+  max-width: 1000px;
+  margin: 40px auto; /* Centered content */
+  padding: 20px;
+  background-color: #f4f7ff;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  min-height: 400px;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+}
+
+.admin-content h3 {
+  margin-bottom: 20px;
+  color: #003d99;
+  font-size: 1.5rem;
+}
+
+.admin-content input,
+.admin-content select,
+.admin-content button {
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+  font-size: 1rem;
+}
+
+.admin-content input,
+.admin-content select {
+  width: 80%;
+}
+
+.admin-content button {
+  background-color: #0052cc;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.admin-content button:hover {
+  background-color: #003d99;
+  transform: translateY(-2px);
+}
+/* Profile Table Styling */
+.profile-table {
+  width: 60%;              /* larger table */
+  max-width: 700px;
+  margin: 40px auto;       /* center horizontally with spacing from top */
+  border-collapse: collapse;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 1.1rem;       /* slightly larger text */
+}
+
+.profile-table th, .profile-table td {
+  padding: 15px 20px;      /* more padding for larger table feel */
+  text-align: left;
+}
+
+.profile-table th {
+  background-color: #e6f0ff;
+  
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.profile-table tr {
+  background-color: #e6f0ff;
+}
+
+.profile-table tr:hover {
+  background-color: #cce0ff;  /* subtle hover effect */
+  transition: 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-header {
+    flex-direction: column;
+    align-items: center;
+  }
+  .admin-nav {
+    justify-content: center;
+  }
+  #logout-btn {
+    margin-top: 10px;
+  }
+}
+/* ========== HISTORY SECTION STYLES ========== */
+.history-section {
+    margin-top: 30px;
+}
+
+.history-section h4 {
+    color: #003d99;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.add-new-btn {
+    background-color: #28a745 !important;
+    color: white !important;
+    padding: 12px 24px !important;
+    font-size: 1rem !important;
+    border-radius: 8px !important;
+    border: none !important;
+    cursor: pointer !important;
+    font-weight: 600 !important;
+    margin-bottom: 20px !important;
+    transition: all 0.3s ease !important;
+    display: inline-block !important;
+}
+
+.add-new-btn:hover {
+    background-color: #218838 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+
+/* ========== HISTORY LIST STYLES ========== */
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.history-item {
+    background-color: white;
+    border: 2px solid #d1e0ff;
+    border-radius: 12px;
+    padding: 20px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.history-item:hover {
+    background-color: #f0f7ff;
+    border-color: #0052cc;
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0, 82, 204, 0.15);
+}
+
+.history-date {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #003d99;
+}
+
+.eval-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #003d99;
+}
+
+.eval-details {
+    font-size: 0.95rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+.history-action {
+    color: #0052cc;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.no-data {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+    font-size: 1.1rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border: 2px dashed #ddd;
+}
+
+/* ========== FORM SECTION STYLES ========== */
+.form-section {
+    margin-top: 30px;
+    padding: 25px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h4 {
+    color: #003d99;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e6f0ff;
+}
+
+.total-marks-display {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0052cc;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background-color: #e6f0ff;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+/* ========== TABLE STYLES FOR FORMS ========== */
+.attendance-table,
+.result-table {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 20px 0 !important;
+}
+
+.attendance-table th,
+.result-table th {
+    background-color: #0052cc !important;
+    color: white !important;
+    padding: 12px 15px !important;
+    text-align: left !important;
+}
+
+.attendance-table td,
+.result-table td {
+    padding: 12px 15px !important;
+    background-color: white !important;
+}
+
+.attendance-table tr:nth-child(even) td,
+.result-table tr:nth-child(even) td {
+    background-color: #f8f9fa !important;
+}
+
+.att-select {
+    width: 120px !important;
+    padding: 8px 12px !important;
+    border-radius: 6px !important;
+    border: 1px solid #ccc !important;
+    font-size: 0.95rem !important;
+    cursor: pointer;
+    background-color: white;
+}
+
+.att-select:focus {
+    outline: none;
+    border-color: #0052cc;
+    box-shadow: 0 0 0 3px rgba(0, 82, 204, 0.1);
+}
+
+.res-input {
+    width: 100px !important;
+    padding: 8px 12px !important;
+    border-radius: 6px !important;
+    border: 1px solid #ccc !important;
+    font-size: 0.95rem !important;
+}
+
+.res-input:focus {
+    outline: none;
+    border-color: #0052cc;
+    box-shadow: 0 0 0 3px rgba(0, 82, 204, 0.1);
+}
+
+/* ========== BUTTON GROUP STYLES ========== */
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    justify-content: flex-start;
+}
+
+.save-btn {
+    background-color: #0052cc !important;
+    color: white !important;
+    padding: 12px 30px !important;
+    font-size: 1rem !important;
+    border-radius: 8px !important;
+    border: none !important;
+    cursor: pointer !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
+
+.save-btn:hover {
+    background-color: #003d99 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 82, 204, 0.3);
+}
+
+.cancel-btn {
+    background-color: #6c757d !important;
+    color: white !important;
+    padding: 12px 30px !important;
+    font-size: 1rem !important;
+    border-radius: 8px !important;
+    border: none !important;
+    cursor: pointer !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
+
+.cancel-btn:hover {
+    background-color: #5a6268 !important;
+    transform: translateY(-2px);
+}
+
+/* ========== NOTIFICATION STYLES ========== */
+.notification-item {
+    padding: 15px 20px;
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: #856404;
+}
+
+.no-notifications {
+    padding: 20px;
+    background-color: #d4edda;
+    border-left: 4px solid #28a745;
+    border-radius: 8px;
+    color: #155724;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+    .history-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .history-action {
+        align-self: flex-end;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .save-btn,
+    .cancel-btn {
+        width: 100%;
+    }
+
+    .attendance-table,
+    .result-table {
+        font-size: 0.9rem;
+    }
+}
+/* ========== STUDENT ATTENDANCE HIGHLIGHTING ========== */
+.low-attendance {
+    background-color: #fff3cd !important;
+}
+
+.low-attendance td {
+    color: #856404;
+    font-weight: 500;
+}
+
+/* ========== GRADE BADGES ========== */
+.grade-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-align: center;
+    min-width: 40px;
+}
+
+.grade-A {
+    background-color: #d4edda;
+    color: #155724;
+    border: 2px solid #28a745;
+}
+
+.grade-B {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 2px solid #17a2b8;
+}
+
+.grade-C {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 2px solid #ffc107;
+}
+
+.grade-D {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 2px solid #f5c6cb;
+}
+
+.grade-F {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 2px solid #dc3545;
+}
+
+/* ========== STUDENT NOTIFICATIONS ========== */
+.notification-warning {
+    padding: 15px 20px;
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: #856404;
+}
+
+.no-notifications {
+    padding: 20px;
+    background-color: #d4edda;
+    border-left: 4px solid #28a745;
+    border-radius: 8px;
+    color: #155724;
+    font-size: 1.1rem;
+    text-align: center;
+}
+/* ========== STUDENT COURSE SECTIONS ========== */
+.course-section {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 2px solid #e6f0ff;
+    transition: all 0.3s ease;
+}
+
+.course-section:hover {
+    box-shadow: 0 4px 15px rgba(0, 82, 204, 0.12);
+    border-color: #cce0ff;
+}
+
+.low-attendance-course {
+    border-color: #ffc107 !important;
+    background-color: #fffbf0 !important;
+}
+
+/* ========== COURSE HEADER ========== */
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e6f0ff;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.course-header h4 {
+    color: #003d99;
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.course-summary {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #555;
+    flex-wrap: wrap;
+}
+
+.course-summary .percentage {
+    color: #0052cc;
+    font-size: 1.1rem;
+}
+
+/* ========== DETAIL TABLE ========== */
+.detail-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.detail-table th {
+    background-color: #0052cc;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.detail-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e6f0ff;
+    font-size: 0.95rem;
+}
+
+.detail-table tr:last-child td {
+    border-bottom: none;
+}
+
+.detail-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.detail-table tr:hover {
+    background-color: #f0f7ff;
+}
+
+/* ========== STATUS BADGES ========== */
+.status-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.status-present {
+    background-color: #d4edda;
+    color: #155724;
+    border: 2px solid #28a745;
+}
+
+.status-absent {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 2px solid #dc3545;
+}
+
+/* ========== GRADE BADGES ========== */
+.grade-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-align: center;
+    min-width: 40px;
+}
+
+.grade-A {
+    background-color: #d4edda;
+    color: #155724;
+    border: 2px solid #28a745;
+}
+
+.grade-B {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 2px solid #17a2b8;
+}
+
+.grade-C {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 2px solid #ffc107;
+}
+
+.grade-D {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 2px solid #f5c6cb;
+}
+
+.grade-F {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 2px solid #dc3545;
+}
+
+/* ========== STUDENT NOTIFICATIONS ========== */
+.notification-warning {
+    padding: 15px 20px;
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: #856404;
+}
+
+.no-notifications {
+    padding: 20px;
+    background-color: #d4edda;
+    border-left: 4px solid #28a745;
+    border-radius: 8px;
+    color: #155724;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+    .course-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .course-summary {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .detail-table {
+        font-size: 0.85rem;
+    }
+
+    .detail-table th,
+    .detail-table td {
+        padding: 10px 8px;
+    }
+}
