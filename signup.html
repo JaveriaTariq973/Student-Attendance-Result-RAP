@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal - Signup</title>
+  <link rel="stylesheet" href="styles/auth.css">
+</head>
+<body>
+  <main class="auth-container">
+    <div class="auth-card">
+      <h2>Create Account</h2>
+
+      <!-- Role selection -->
+      <label for="role">Select Role:</label>
+      <select id="role">
+        <option value="student">Student</option>
+        <option value="teacher">Teacher</option>
+        <option value="admin">Admin</option>
+      </select>
+
+      <!-- Signup Form -->
+      <div id="signup-form">
+        <input type="text" id="signup-name" placeholder="Username">
+        <input type="password" id="signup-pass" placeholder="Password">
+        <div id="section-container" style="display:block;">
+          <label for="signup-section">Select Section (for Students):</label>
+          <select id="signup-section">
+            <option value="">--Select Section--</option>
+            <option value="A">Section A</option>
+            <option value="B">Section B</option>
+          </select>
+        </div>
+        <button id="signup-btn">Sign Up</button>
+      </div>
+
+      <p class="auth-link">Already have an account? <a href="login.html">Login</a></p>
+    </div>
+  </main>
+
+  <script src="js/storage.js"></script>
+  <script src="js/signup.js"></script>
+</body>
+</html>
