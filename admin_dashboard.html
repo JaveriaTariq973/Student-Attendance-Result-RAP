@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="styles/admin.css">
+</head>
+<body>
+  <header class="admin-header">
+  <div class="logo" onclick="showSection('profile')">RAP</div>
+  <nav class="admin-nav">
+    <button class="nav-btn" data-section="profile">Profile</button>
+    <button class="nav-btn" data-section="add-teacher">Add Teacher</button>
+    <button class="nav-btn" data-section="add-section">Add Section</button>
+    <button class="nav-btn" data-section="assign-courses">Assign Courses</button>
+    <button class="nav-btn" data-section="notifications">Notifications</button>
+  </nav>
+  <button id="logout-btn">Logout</button>
+</header>
+
+
+  <main id="admin-content" class="admin-content">
+    <!-- Content will be dynamically injected here by admin.js -->
+  </main>
+
+  <script src="js/storage.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
